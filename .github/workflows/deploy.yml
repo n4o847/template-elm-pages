@@ -15,7 +15,10 @@ jobs:
         node-version: 10.x
     - run: |
         npm install create-elm-app -g
+    - run: |
         elm-app build
+      env:
+        PUBLIC_URL: ./
     - uses: peaceiris/actions-gh-pages@v2.4.0
       env:
         PERSONAL_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
